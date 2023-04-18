@@ -1,0 +1,913 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="530.0" prefWidth="1007.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.alma.teamleft.EightCAPController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+            <TabPane prefHeight="461.0" prefWidth="721.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <tabs>
+                <Tab text="Add Client">
+                  <content>
+                        <ScrollPane prefHeight="220.0" prefWidth="657.0">
+                           <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="382.0" prefWidth="642.0">
+                                 <children>
+                                    <HBox prefHeight="348.0" prefWidth="596.0">
+                                       <children>
+                                          <VBox prefHeight="348.0" prefWidth="316.0">
+                                             <children>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Text>
+                                                      <TextField fx:id="clientFirstName">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Text>
+                                                      <TextField fx:id="clientLastName">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Birth">
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Text>
+                                                      <DatePicker fx:id="clientDOB" />
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="County">
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Text>
+                                                      <ChoiceBox fx:id="clientCounty" prefWidth="150.0" />
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Preferred Contact Method">
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Text>
+                                                      <ChoiceBox fx:id="clientPCM" prefWidth="150.0" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="5.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DBA ID">
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Text>
+                                                      <TextField fx:id="clientDBA">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HMIS ID">
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Text>
+                                                      <TextField fx:id="clientHMIS">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox alignment="TOP_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail(s)">
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                         <VBox.margin>
+                                                            <Insets top="5.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                      <VBox alignment="BOTTOM_RIGHT">
+                                                         <children>
+                                                            <TextField fx:id="clientEmail">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox alignment="TOP_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number(s)">
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                         <VBox.margin>
+                                                            <Insets top="5.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                      <VBox alignment="BOTTOM_RIGHT">
+                                                         <children>
+                                                            <TextField fx:id="clientPhoneNumber">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <Button fx:id="clientAddPhoneNumberButton" alignment="BOTTOM_RIGHT" mnemonicParsing="false" onAction="#AddPhoneNumber" text="Add Phone Number" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="348.0" prefWidth="279.0">
+                                             <children>
+                                                <VBox prefWidth="250.0">
+                                                   <children>
+                                                      <HBox alignment="CENTER_RIGHT">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Address Line 1">
+                                                               <HBox.margin>
+                                                                  <Insets right="5.0" />
+                                                               </HBox.margin>
+                                                            </Text>
+                                                            <TextField fx:id="clientAddressLine1" />
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_RIGHT">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Address Line 2">
+                                                               <HBox.margin>
+                                                                  <Insets right="5.0" />
+                                                               </HBox.margin>
+                                                            </Text>
+                                                            <TextField fx:id="clientAddressLine2" />
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_RIGHT">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="City">
+                                                               <HBox.margin>
+                                                                  <Insets right="5.0" />
+                                                               </HBox.margin>
+                                                            </Text>
+                                                            <TextField fx:id="clientCity" />
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_RIGHT">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="State">
+                                                               <HBox.margin>
+                                                                  <Insets right="5.0" />
+                                                               </HBox.margin>
+                                                            </Text>
+                                                            <TextField fx:id="clientState" />
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_RIGHT">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Address Type">
+                                                               <HBox.margin>
+                                                                  <Insets right="5.0" />
+                                                               </HBox.margin>
+                                                            </Text>
+                                                            <ChoiceBox fx:id="clientAddressType" prefWidth="150.0">
+                                                               <HBox.margin>
+                                                                  <Insets />
+                                                               </HBox.margin>
+                                                            </ChoiceBox>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </VBox>
+                                                <HBox alignment="BOTTOM_RIGHT">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                   <children>
+                                                      <Button fx:id="clientAddAddressButton" mnemonicParsing="false" onAction="#AddAddress" prefHeight="25.0" prefWidth="90.0" text="Add Address" />
+                                                   </children>
+                                                </HBox>
+                                                <VBox prefHeight="151.0" prefWidth="303.0">
+                                                   <children>
+                                                      <HBox alignment="TOP_RIGHT">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Notes" wrappingWidth="38.44140625" />
+                                                            <TextArea fx:id="clientNotes" prefHeight="178.0" prefWidth="202.0" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="5.0" />
+                                             </VBox.margin>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" layoutX="-9.0" layoutY="338.0" prefHeight="27.0" prefWidth="640.0">
+                                       <children>
+                                          <Button fx:id="clientAddClientButton" mnemonicParsing="false" onAction="#AddClient" text="Add Client">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" right="50.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                       <padding>
+                                          <Insets top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                  </content>
+                </Tab>
+                  <Tab text="Client Database">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="432.0" prefWidth="721.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Accordion prefHeight="576.0" prefWidth="1007.0">
+                                      <panes>
+                                        <TitledPane animated="false" prefHeight="37.0" prefWidth="1007.0" text="Filter">
+                                             <content>
+                                                <ScrollPane prefHeight="292.0" prefWidth="1005.0">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="382.0" prefWidth="642.0">
+                                                         <children>
+                                                            <HBox prefHeight="239.0" prefWidth="596.0">
+                                                               <children>
+                                                                  <VBox prefHeight="348.0" prefWidth="316.0">
+                                                                     <children>
+                                                                        <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                                           <children>
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Client ID">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="5.0" />
+                                                                                 </HBox.margin>
+                                                                              </Text>
+                                                                              <TextField fx:id="dbClientID">
+                                                                                 <HBox.margin>
+                                                                                    <Insets />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                                           <children>
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="5.0" />
+                                                                                 </HBox.margin>
+                                                                              </Text>
+                                                                              <TextField fx:id="dbClientFirstName">
+                                                                                 <HBox.margin>
+                                                                                    <Insets />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="5.0" top="5.0" />
+                                                                           </VBox.margin>
+                                                                        </HBox>
+                                                                        <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                                           <children>
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="5.0" />
+                                                                                 </HBox.margin>
+                                                                              </Text>
+                                                                              <TextField fx:id="dbCLientLastName">
+                                                                                 <HBox.margin>
+                                                                                    <Insets />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="5.0" />
+                                                                           </VBox.margin>
+                                                                        </HBox>
+                                                                        <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                                           <children>
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Birth">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="5.0" />
+                                                                                 </HBox.margin>
+                                                                              </Text>
+                                                                              <DatePicker fx:id="dbClientDOB" />
+                                                                           </children>
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="5.0" />
+                                                                           </VBox.margin>
+                                                                        </HBox>
+                                                                        <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                                           <children>
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="County">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="5.0" />
+                                                                                 </HBox.margin>
+                                                                              </Text>
+                                                                              <ChoiceBox fx:id="dbClientCounty" prefWidth="150.0" />
+                                                                           </children>
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="5.0" />
+                                                                           </VBox.margin>
+                                                                        </HBox>
+                                                                        <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                                           <children>
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Preferred Contact Method">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="5.0" />
+                                                                                 </HBox.margin>
+                                                                              </Text>
+                                                                              <ChoiceBox fx:id="dbClientPCM" prefWidth="150.0" />
+                                                                           </children>
+                                                                           <padding>
+                                                                              <Insets bottom="5.0" />
+                                                                           </padding>
+                                                                        </HBox>
+                                                                        <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                                           <children>
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DBA ID">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="5.0" />
+                                                                                 </HBox.margin>
+                                                                              </Text>
+                                                                              <TextField fx:id="dbClientDBA">
+                                                                                 <HBox.margin>
+                                                                                    <Insets />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="5.0" />
+                                                                           </VBox.margin>
+                                                                        </HBox>
+                                                                        <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                                           <children>
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HMIS ID">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="5.0" />
+                                                                                 </HBox.margin>
+                                                                              </Text>
+                                                                              <TextField fx:id="dbClientHMIS">
+                                                                                 <HBox.margin>
+                                                                                    <Insets />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="5.0" />
+                                                                           </VBox.margin>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="348.0" prefWidth="279.0">
+                                                                     <children>
+                                                                        <HBox alignment="TOP_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                                           <children>
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="5.0" />
+                                                                                 </HBox.margin>
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="5.0" />
+                                                                                 </VBox.margin>
+                                                                              </Text>
+                                                                              <VBox alignment="BOTTOM_RIGHT">
+                                                                                 <children>
+                                                                                    <TextField fx:id="dbClientEmail">
+                                                                                       <VBox.margin>
+                                                                                          <Insets bottom="5.0" />
+                                                                                       </VBox.margin>
+                                                                                    </TextField>
+                                                                                 </children>
+                                                                              </VBox>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox alignment="TOP_RIGHT" prefHeight="21.0" prefWidth="241.0">
+                                                                           <children>
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="5.0" />
+                                                                                 </HBox.margin>
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="5.0" />
+                                                                                 </VBox.margin>
+                                                                              </Text>
+                                                                              <VBox alignment="BOTTOM_RIGHT">
+                                                                                 <children>
+                                                                                    <TextField fx:id="dbClientPhoneNumber">
+                                                                                       <VBox.margin>
+                                                                                          <Insets bottom="5.0" />
+                                                                                       </VBox.margin>
+                                                                                    </TextField>
+                                                                                 </children>
+                                                                              </VBox>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <VBox prefWidth="250.0">
+                                                                           <children>
+                                                                           </children>
+                                                                           <VBox.margin>
+                                                                              <Insets top="5.0" />
+                                                                           </VBox.margin>
+                                                                        </VBox>
+                                                                        <HBox alignment="BOTTOM_RIGHT">
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="5.0" left="5.0" top="5.0" />
+                                                                           </VBox.margin>
+                                                                        </HBox>
+                                                                        <VBox prefHeight="151.0" prefWidth="303.0">
+                                                                           <children>
+                                                                              <HBox alignment="TOP_RIGHT" />
+                                                                           </children>
+                                                                        </VBox>
+                                                                     </children>
+                                                                     <VBox.margin>
+                                                                        <Insets left="5.0" />
+                                                                     </VBox.margin>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_RIGHT" layoutX="1.0" layoutY="240.0" prefHeight="27.0" prefWidth="640.0">
+                                                               <children>
+                                                                  <Button fx:id="dbClientSearchButton" mnemonicParsing="false" onAction="#ClientSearch" prefHeight="46.0" prefWidth="110.0" text="Search">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="10.0" right="50.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets top="5.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </content>
+                                        </TitledPane>
+                                      </panes>
+                                    </Accordion>
+                                    <ScrollPane>
+                                       <content>
+                                          <TableView>
+                                            <columns>
+                                              <TableColumn prefWidth="75.0" text="ID" />
+                                              <TableColumn prefWidth="75.0" text="First Name" />
+                                                <TableColumn prefWidth="75.0" text="E-mail" />
+                                                <TableColumn prefWidth="75.0" text="Phone Number" />
+                                                <TableColumn prefWidth="75.0" text="Date of Birth" />
+                                                <TableColumn prefWidth="75.0" text="County" />
+                                                <TableColumn prefWidth="75.0" text="Address" />
+                                                <TableColumn prefWidth="75.0" text="Preferred Contact Method" />
+                                                <TableColumn prefWidth="75.0" text="DBA ID" />
+                                                <TableColumn prefWidth="75.0" text="HMIS ID" />
+                                                <TableColumn prefWidth="75.0" text="Prescreen Date" />
+                                                <TableColumn prefWidth="75.0" text="Date Of Entry" />
+                                                <TableColumn prefWidth="75.0" text="Notes" />
+                                            </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                <Tab text="Add Ticket">
+                     <content>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox>
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="38.0" prefWidth="343.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Subject">
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextField fx:id="ticketSubject" accessibleRole="TEXT_FIELD" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="115.0" prefWidth="343.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Details">
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextArea fx:id="ticketDetails" prefHeight="200.0" prefWidth="200.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="38.0" prefWidth="343.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Client:">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextField fx:id="ticketClient" accessibleRole="TEXT_FIELD" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="38.0" prefWidth="343.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Call Date:">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <DatePicker fx:id="ticketCallDate" accessibleRole="TEXT_FIELD" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="38.0" prefWidth="343.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Service">
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <ChoiceBox fx:id="ticketService" prefWidth="150.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="38.0" prefWidth="343.0">
+                                       <children>
+                                          <Button fx:id="ticketAddTicketButton" mnemonicParsing="false" onAction="#AddTicket" text="Add Ticket" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </content>
+                </Tab>
+                  <Tab text="Ticket Database">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="432.0" prefWidth="721.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Accordion prefHeight="394.0" prefWidth="1007.0">
+                                       <panes>
+                                          <TitledPane animated="false" prefHeight="37.0" prefWidth="1007.0" text="Filter">
+                                             <content>
+                                                <ScrollPane prefHeight="292.0" prefWidth="1005.0">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="382.0" prefWidth="343.0">
+                                                         <children>
+                                                            <VBox layoutX="10.0" layoutY="10.0">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="38.0" prefWidth="343.0">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Client ID">
+                                                                           <HBox.margin>
+                                                                              <Insets right="5.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <TextField fx:id="dbTicketClientID" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox alignment="CENTER" prefHeight="38.0" prefWidth="343.0">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Subject">
+                                                                           <HBox.margin>
+                                                                              <Insets right="5.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <TextField fx:id="dbTicketSubject" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox alignment="CENTER" prefHeight="38.0" prefWidth="343.0">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
+                                                                           <HBox.margin>
+                                                                              <Insets right="5.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <ChoiceBox fx:id="dbTicketStatus" prefWidth="150.0" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox alignment="CENTER" prefHeight="38.0" prefWidth="343.0">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Service">
+                                                                           <HBox.margin>
+                                                                              <Insets right="5.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <ChoiceBox fx:id="dbTicketService" prefWidth="150.0" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox alignment="CENTER" prefHeight="38.0" prefWidth="343.0">
+                                                                     <children>
+                                                                        <Button fx:id="dbTicketSearchButton" mnemonicParsing="false" onAction="#SearchTicket" text="Search" />
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </content>
+                                          </TitledPane>
+                                       </panes>
+                                    </Accordion>
+                                    <ScrollPane>
+                                       <content>
+                                          <TableView>
+                                             <columns>
+                                                <TableColumn prefWidth="75.0" text="ID" />
+                                                <TableColumn prefWidth="75.0" text="Subject" />
+                                                <TableColumn prefWidth="75.0" text="Client" />
+                                                <TableColumn prefWidth="75.0" text="Creator Of Ticket" />
+                                                <TableColumn prefWidth="75.0" text="Call" />
+                                                <TableColumn prefWidth="75.0" text="Status" />
+                                                <TableColumn prefWidth="75.0" text="Service " />
+                                                <TableColumn prefWidth="75.0" text="Turn Around Time" />
+                                             </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Add Follow Up">
+                     <content>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="TOP_RIGHT" prefHeight="476.0" prefWidth="354.0">
+                                 <children>
+                                    <HBox alignment="CENTER_RIGHT">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ticket ID" />
+                                          <TextField fx:id="followUpTicketID">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="TOP_RIGHT">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Outcome" />
+                                          <TextArea fx:id="followUpOutcome" prefHeight="200.0" prefWidth="200.0">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </TextArea>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ticket Status" />
+                                       <ChoiceBox fx:id="statusupdate" prefWidth="150.0" />
+                                    </HBox>
+                                    <Button fx:id="followUpAddFollowUpButton" mnemonicParsing="false" onAction="#AddFollowUP" text="Add Follow Up">
+                                       <VBox.margin>
+                                          <Insets right="20.0" top="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </content>
+                  </Tab>
+                  <Tab text="Follow Up Database">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="432.0" prefWidth="721.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Accordion prefHeight="394.0" prefWidth="1007.0">
+                                       <panes>
+                                          <TitledPane animated="false" prefHeight="37.0" prefWidth="1007.0" text="Filter">
+                                             <content>
+                                                <ScrollPane prefHeight="292.0" prefWidth="1005.0">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="382.0" prefWidth="343.0">
+                                                         <children>
+                                                            <VBox alignment="TOP_RIGHT" prefHeight="476.0" prefWidth="354.0">
+                                                               <children>
+                                                                  <HBox alignment="CENTER_RIGHT">
+                                                                     <VBox.margin>
+                                                                        <Insets top="5.0" />
+                                                                     </VBox.margin>
+                                                                  </HBox>
+                                                                  <HBox alignment="CENTER_RIGHT">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ticket ID" />
+                                                                        <TextField fx:id="dbFollowUpTicketID">
+                                                                           <HBox.margin>
+                                                                              <Insets left="5.0" />
+                                                                           </HBox.margin>
+                                                                        </TextField>
+                                                                     </children>
+                                                                     <VBox.margin>
+                                                                        <Insets top="5.0" />
+                                                                     </VBox.margin>
+                                                                  </HBox>
+                                                                  <HBox alignment="CENTER_RIGHT">
+                                                                     <VBox.margin>
+                                                                        <Insets top="5.0" />
+                                                                     </VBox.margin>
+                                                                  </HBox>
+                                                                  <Button fx:id="dbFollowUpSearchButton" mnemonicParsing="false" onAction="#FollowUpSearch" text="Search ">
+                                                                     <VBox.margin>
+                                                                        <Insets right="20.0" top="5.0" />
+                                                                     </VBox.margin>
+                                                                  </Button>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </content>
+                                          </TitledPane>
+                                       </panes>
+                                    </Accordion>
+                                    <ScrollPane>
+                                       <content>
+                                          <TableView>
+                                             <columns>
+                                                <TableColumn prefWidth="75.0" text="ID" />
+                                                <TableColumn prefWidth="75.0" text="Ticket ID" />
+                                                <TableColumn prefWidth="75.0" text="Date" />
+                                                <TableColumn prefWidth="75.0" text="Outcome" />
+                                             </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
